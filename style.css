@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+.navbar {
+  position: relative;
+  background-color: #4c5958;
+  padding: 10px;
+}
+.navbar__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.navbar__list-item {
+  margin: 0 10px;
+}
+.navbar__list-item a {
+  font-family: "Lato", sans-serif;
+  color: white;
+  transition: 0.2s ease;
+  text-decoration: none;
+  font-size: 18px;
+}
+.navbar__list-item a:hover {
+  color: #ff6eb9;
+}
+.navbar__icon {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+  transition: 2s ease;
+}
+.navbar__icon:hover {
+  transform: rotate(45deg);
+}
+
+#hero {
+  background-image: url(assets/mountain1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  height: 0;
+}
+
+main {
+  padding: 2.5vh 10vw;
+  text-align: center;
+  color: #414a49;
+}
+#page-title {
+  font-family: "Lora", serif;
+  font-size: 35px;
+}
+#skier-image {
+  width: 100%;
+}
+main p {
+  font-family: "Lato", sans-serif;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+/* Desktops, Laptops, and Computer Screens */
+@media screen and (orientation: landscape) and (min-aspect-ratio: 16/9) and (hover:hover){
+  #page-title{
+    font-size: 70px;
+  }
+
+  main p{
+    text-align: left;
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  #skier-image{
+    float: left;
+    width: 45%;
+    padding: 0 40px 15px 0;
+  }
+
+  #hero{
+    background-image: url(assets/mountain1.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 400px;
+  }
+
+  /* Reduced Motion for Desktop Users */
+  @media (prefers-reduced-motion){
+    #hero{
+      background-attachment: scroll;
+    }
+
+    .navbar__icon:hover {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+/* Phones with both portrait and landscape orientations */
+@media (orientation: portrait), (not (hover:hover)), ((max-width: 480px) and (orientation: landscape)){
+  .navbar__list-item a:hover {
+    color: white;
+  }
+
+  .navbar__list-item a:active {
+    color: #ff6eb9;
+  }
+  
+  .navbar__icon:hover {
+    transform: rotate(0deg);
+  }
+
+  .navbar__icon:active {
+    transform: rotate(45deg);
+  }
+}
